@@ -2,7 +2,7 @@
 
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=6
 BACKTITLE="Download Manager by github.com/mirkancal"
 TITLE="Download Manager v1.0"
 MENU="Choose one of the following options:"
@@ -31,7 +31,7 @@ else
     break
 fi
 
-do 
+do
     continue
 
 done
@@ -63,7 +63,9 @@ function delete_history() {
 }
 
 function quit() {
+if [[ -e $HOME/lofurls.txt ]]; then
     rm $HOME/lofurls.txt
+fi
     exit
 }
 
